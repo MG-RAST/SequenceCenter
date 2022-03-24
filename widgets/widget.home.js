@@ -302,7 +302,9 @@
 		currentFileShareItems.push(item+node.file.name);
 		fns.push(node.attributes.project_id+"|"+node.attributes.project+"|"+node.attributes.group+"|"+node.attributes.name);
 	    }
-	    var data = 'download_url=1&archive_format=zip&ids='+ids.join(",")+"&sharenames="+fns.join(",");
+		// Sharenames not supported by Shock
+	    // var data = 'download_url=1&archive_format=zip&ids='+ids.join(",")+"&sharenames="+fns.join(",");
+		var data = 'download_url=1&archive_format=zip&ids='+ids.join(",");
 	    jQuery.ajax({
 		method: "POST",
 		url: RetinaConfig.shock_url + "/node/",
